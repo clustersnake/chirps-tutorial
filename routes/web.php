@@ -26,6 +26,9 @@ Route::middleware('auth')->group(function () {
         '/chirps',
         'chirps.index'
     )->name('chirps.index');
+    Route::post('/chirps', function() {
+        $message = request('message');
+    })->name('chirps');
 });
 
 require __DIR__ . '/auth.php';
