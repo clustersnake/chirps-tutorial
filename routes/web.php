@@ -4,6 +4,10 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ChirpController;
 
+// DB::listen(function ($query) {
+//     dump($query->sql);
+// });
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
