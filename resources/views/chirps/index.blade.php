@@ -10,7 +10,7 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
 
-                    <form action="#" method="post">
+                    <form action="#" method="post" action="{{ route('chirps.store') }}">
                         @csrf
                         <textarea name="message"
                             class="block w-full rounded-md border-gray-300 bg-white shadow-sm transition-colors
