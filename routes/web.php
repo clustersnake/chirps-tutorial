@@ -27,7 +27,7 @@ Route::middleware('auth')->group(function () {
         '/chirps',
         'chirps.index'
     )->name('chirps.index');
-    Route::post('/chirps', function() {
+    Route::post('/chirps', function () {
         $message = request('message');
 
         Chirp::create([
@@ -35,7 +35,10 @@ Route::middleware('auth')->group(function () {
             'user_id' => auth()->id(),
         ]);
 
-        return to_route('chirps.index');
+        // session()->flash('status', 'The chirp was created successfully!');
+
+        return to_route('chirps.index')
+            ->with('status', __('The chirp was created successfully!'));
     })->name('chirps');
 });
 
