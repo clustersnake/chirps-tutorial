@@ -9,7 +9,6 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-
                     <form action="#" method="post" action="{{ route('chirps.store') }}">
                         @csrf
                         <textarea name="message"
@@ -17,7 +16,8 @@
               duration-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
               dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:focus:border-indigo-300
               dark:focus:ring dark:focus:ring-indigo-200 dark:focus:ring-opacity-50"
-                            placeholder="{{ __('What\'s on your mind?') }}"></textarea>
+                            placeholder="{{ __('What\'s on your mind?') }}">{{ old('message') }}</textarea>
+                        <x-input-error :messages="$errors->get('message')" class="mt-2" />
                         <x-primary-button class="mt-4">{{ __('Chirp') }}</x-primary-button>
                     </form>
                 </div>
